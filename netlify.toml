@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+# Ensure Netlify sees the /thank-you static page and redirects
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you/"
+  status = 200

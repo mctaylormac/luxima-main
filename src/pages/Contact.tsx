@@ -9,15 +9,11 @@ export default function Contact() {
     message: ''
   });
 
+  // Netlify Forms will handle the submit — keep handler for local use if needed
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Open the user's mail client with a prefilled message to the Gmail address
-    const subject = formData.subject || 'Demande via formulaire de contact';
-    const body = `Nom: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
-    const mailto = `mailto:luxanimagroup@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    // If you need to submit via JS, implement fetch to Netlify endpoint here.
+    // Currently the form is configured to submit natively to Netlify Forms.
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -139,7 +135,20 @@ export default function Contact() {
                 Envoyez-nous un message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                action="/thank-you"
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                  </label>
+                </p>
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
                     Nom *
