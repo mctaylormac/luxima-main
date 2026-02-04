@@ -26,14 +26,13 @@ jobs:
       - name: Check Netlify secrets
         run: |
           if [ -z "${{ secrets.NETLIFY_AUTH_TOKEN }}" ] || [ -z "${{ secrets.NETLIFY_SITE_ID }}" ]; then
-            echo "NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is missing. Deploy step will be skipped or fail.";
-            exit 1;
+            echo "NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is missing. Deploy step will be skipped.";
           else
             echo "Netlify secrets present";
           fi
 
       - name: Deploy to Netlify (optional)
-        if: secrets.NETLIFY_AUTH_TOKEN && secrets.NETLIFY_SITE_ID
+        if: ${{ secrets.NETLIFY_AUTH_TOKEN && secrets.NETLIFY_SITE_ID }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
