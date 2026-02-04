@@ -1,0 +1,100 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gold foil texture -->
+  <defs>
+    <pattern id="foil" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="#d4af37"/>
+      <polygon points="0,0 25,10 50,0 40,25 50,50 25,40 0,50 10,25" fill="#c4a01f" opacity="0.6"/>
+      <polygon points="50,0 35,15 50,30" fill="#e5c158" opacity="0.5"/>
+      <polygon points="0,50 15,35 30,50" fill="#c4a01f" opacity="0.5"/>
+    </pattern>
+    <filter id="goldGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#d4af37"/>
+  <rect width="1200" height="900" fill="url(#foil)"/>
+  
+  <!-- Top neon lines -->
+  <line x1="100" y1="60" x2="1100" y2="60" stroke="#ffffff" stroke-width="10" opacity="0.85" filter="url(#goldGlow)"/>
+  <line x1="150" y1="110" x2="1050" y2="110" stroke="#ffffff" stroke-width="8" opacity="0.7"/>
+  <line x1="100" y1="160" x2="1100" y2="160" stroke="#ffffff" stroke-width="10" opacity="0.85"/>
+  <line x1="100" y1="820" x2="1100" y2="820" stroke="#ffffff" stroke-width="10" opacity="0.85"/>
+  <line x1="150" y1="770" x2="1050" y2="770" stroke="#ffffff" stroke-width="8" opacity="0.7"/>
+  <line x1="100" y1="720" x2="1100" y2="720" stroke="#ffffff" stroke-width="10" opacity="0.85"/>
+  
+  <!-- Left balloons cluster -->
+  <g id="balloons-left">
+    <!-- Large gold balloons -->
+    <circle cx="120" cy="250" r="45" fill="#d4af37" filter="url(#goldGlow)"/>
+    <circle cx="120" cy="250" r="42" fill="#e5c158" opacity="0.7"/>
+    <path d="M 120 295 Q 115 350 110 420" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="180" cy="320" r="50" fill="#c0a030" filter="url(#goldGlow)"/>
+    <circle cx="180" cy="320" r="47" fill="#d4af37" opacity="0.7"/>
+    <path d="M 180 370 Q 175 430 170 500" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="80" cy="380" r="40" fill="#e5c158" filter="url(#goldGlow)"/>
+    <circle cx="80" cy="380" r="37" fill="#f0d55f" opacity="0.7"/>
+    <path d="M 80 420 Q 75 480 70 550" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="160" cy="460" r="45" fill="#d4af37" filter="url(#goldGlow)"/>
+    <circle cx="160" cy="460" r="42" fill="#e5c158" opacity="0.7"/>
+    <path d="M 160 505 Q 155 560 150 630" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <!-- Silver balloons -->
+    <circle cx="120" cy="560" r="40" fill="#c0c0c0" filter="url(#goldGlow)"/>
+    <circle cx="120" cy="560" r="37" fill="#e8e8e8" opacity="0.7"/>
+    <path d="M 120 600 Q 115 650 110 720" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="200" cy="580" r="35" fill="#b0b0b0" filter="url(#goldGlow)"/>
+    <circle cx="200" cy="580" r="32" fill="#d0d0d0" opacity="0.7"/>
+    <path d="M 200 615 Q 195 665 190 735" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="50" cy="650" r="42" fill="#d0d0d0" filter="url(#goldGlow)"/>
+    <circle cx="50" cy="650" r="39" fill="#e0e0e0" opacity="0.7"/>
+    <path d="M 50 692 Q 45 740 40 810" stroke="#333" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Right balloons cluster -->
+  <g id="balloons-right">
+    <!-- Large gold balloons -->
+    <circle cx="1080" cy="250" r="45" fill="#d4af37" filter="url(#goldGlow)"/>
+    <circle cx="1080" cy="250" r="42" fill="#e5c158" opacity="0.7"/>
+    <path d="M 1080 295 Q 1085 350 1090 420" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="1020" cy="320" r="50" fill="#c0a030" filter="url(#goldGlow)"/>
+    <circle cx="1020" cy="320" r="47" fill="#d4af37" opacity="0.7"/>
+    <path d="M 1020 370 Q 1025 430 1030 500" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="1120" cy="380" r="40" fill="#e5c158" filter="url(#goldGlow)"/>
+    <circle cx="1120" cy="380" r="37" fill="#f0d55f" opacity="0.7"/>
+    <path d="M 1120 420 Q 1125 480 1130 550" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="1040" cy="460" r="45" fill="#d4af37" filter="url(#goldGlow)"/>
+    <circle cx="1040" cy="460" r="42" fill="#e5c158" opacity="0.7"/>
+    <path d="M 1040 505 Q 1045 560 1050 630" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <!-- Silver balloons -->
+    <circle cx="1080" cy="560" r="40" fill="#c0c0c0" filter="url(#goldGlow)"/>
+    <circle cx="1080" cy="560" r="37" fill="#e8e8e8" opacity="0.7"/>
+    <path d="M 1080 600 Q 1085 650 1090 720" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="1000" cy="580" r="35" fill="#b0b0b0" filter="url(#goldGlow)"/>
+    <circle cx="1000" cy="580" r="32" fill="#d0d0d0" opacity="0.7"/>
+    <path d="M 1000 615 Q 1005 665 1010 735" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <circle cx="1150" cy="650" r="42" fill="#d0d0d0" filter="url(#goldGlow)"/>
+    <circle cx="1150" cy="650" r="39" fill="#e0e0e0" opacity="0.7"/>
+    <path d="M 1150 692 Q 1155 740 1160 810" stroke="#333" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Subtle shine/reflection on balloons -->
+  <ellipse cx="110" cy="235" rx="20" ry="25" fill="#ffffff" opacity="0.3"/>
+  <ellipse cx="1090" cy="235" rx="20" ry="25" fill="#ffffff" opacity="0.3"/>
+</svg>
