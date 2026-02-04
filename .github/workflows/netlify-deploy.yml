@@ -22,6 +22,15 @@ jobs:
 
       - name: Build
         run: npm run build
+      
+        - name: Check Netlify secrets
+          run: |
+            if [ -z "${{ secrets.NETLIFY_AUTH_TOKEN }}" ] || [ -z "${{ secrets.NETLIFY_SITE_ID }}" ]; then
+              echo "NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is missing. Deploy step will be skipped or fail.";
+              exit 1;
+            else
+              echo "Netlify secrets present";
+            fi
 
       - name: Deploy to Netlify (optional)
         if: secrets.NETLIFY_AUTH_TOKEN && secrets.NETLIFY_SITE_ID
