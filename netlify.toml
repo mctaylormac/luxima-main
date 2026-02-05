@@ -14,5 +14,5 @@
 # SPA fallback for React Router
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "/index.html"
   status = 200

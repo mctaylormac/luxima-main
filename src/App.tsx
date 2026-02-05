@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
 import LuxEventBox from './pages/LuxEventBox';
 import LuxMiniMascottes from './pages/LuxMiniMascottes';
+import Booking from './pages/Booking';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Team />} />
           <Route path="/contact-booking" element={<ContactBooking />} />
+          <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/service-detail" element={<ServiceDetail />} />
           <Route path="/lux-event-box" element={<LuxEventBox />} />

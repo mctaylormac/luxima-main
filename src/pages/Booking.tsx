@@ -15,11 +15,6 @@ export default function Booking() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -67,7 +62,21 @@ export default function Booking() {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-8 md:p-12 space-y-6">
+            <form
+              name="booking"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              action="/thank-you/"
+              className="p-8 md:p-12 space-y-6"
+            >
+              <input type="hidden" name="form-name" value="booking" />
+              <p className="hidden">
+                <label>
+                  Ne pas remplir ce champ:{' '}
+                  <input name="bot-field" onChange={handleChange} />
+                </label>
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
