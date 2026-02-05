@@ -1,10 +1,8 @@
 import { ArrowLeft, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-interface LuxEventBoxProps {
-  onNavigate: (page: string) => void;
-}
-
-export default function LuxEventBox({ onNavigate }: LuxEventBoxProps) {
+export default function LuxEventBox() {
+  const navigate = useNavigate();
   const eventBoxGallery = [
     {
       image: 'Pour anniversaire, évènement privé & VIP.jpeg',
@@ -79,7 +77,7 @@ export default function LuxEventBox({ onNavigate }: LuxEventBoxProps) {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft size={20} />
@@ -197,7 +195,7 @@ export default function LuxEventBox({ onNavigate }: LuxEventBoxProps) {
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             Notre équipe d'experts est à votre disposition pour personnaliser votre expérience et créer l'événement parfait.
           </p>
-          <button onClick={() => onNavigate('booking')} className="px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+          <button onClick={() => navigate('/contact-booking')} className="px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
             Demander un Devis
           </button>
         </div>

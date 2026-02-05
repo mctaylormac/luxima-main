@@ -1,10 +1,8 @@
 import { ArrowLeft, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-interface LuxMiniMascottesProps {
-  onNavigate: (page: string) => void;
-}
-
-export default function LuxMiniMascottes({ onNavigate }: LuxMiniMascottesProps) {
+export default function LuxMiniMascottes() {
+  const navigate = useNavigate();
   const mascotteGallery = [
     {
       image: 'CATY.jpeg',
@@ -89,7 +87,7 @@ export default function LuxMiniMascottes({ onNavigate }: LuxMiniMascottesProps) 
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft size={20} />
@@ -204,7 +202,7 @@ export default function LuxMiniMascottes({ onNavigate }: LuxMiniMascottesProps) 
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             Réservez l'une de nos mascottes charismatiques pour créer des moments inoubliables lors de votre événement.
           </p>
-          <button onClick={() => onNavigate('booking')} className="px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+          <button onClick={() => navigate('/contact-booking')} className="px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
             Réserver une Mascotte
           </button>
         </div>

@@ -1,6 +1,4 @@
-interface HomeProps {
-  onNavigate: (page: string, data?: any) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
 interface ServiceItem {
   image: string;
@@ -16,7 +14,8 @@ interface ServiceItem {
   comingSoon?: boolean;
 }
 
-export default function Home({ onNavigate }: HomeProps) {
+export default function Home() {
+  const navigate = useNavigate();
   const univers: ServiceItem[] = [
     {
       image: 'Luxanima mini mascotte.jpeg',
@@ -176,12 +175,16 @@ export default function Home({ onNavigate }: HomeProps) {
                           {item.subparts.map((subpart, idx) => (
                             <button
                               key={idx}
-                              onClick={() => onNavigate('service-detail', {
-                                title: `${item.title} - ${subpart.label}`,
-                                description: subpart.description,
-                                image: subpart.image,
-                                presentationImage: subpart.presentationImage
-                              })}
+                              onClick={() =>
+                                navigate('/service-detail', {
+                                  state: {
+                                    title: `${item.title} - ${subpart.label}`,
+                                    description: subpart.description,
+                                    image: subpart.image,
+                                    presentationImage: subpart.presentationImage,
+                                  },
+                                })
+                              }
                               className="w-full flex items-center justify-center space-x-2 text-sm bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg py-2 px-3 border border-gray-200 hover:from-gray-100 hover:to-gray-200 hover:border-gray-300 transition-all hover:scale-105 cursor-pointer"
                             >
                               <span className="text-lg">{subpart.icon}</span>
@@ -196,7 +199,7 @@ export default function Home({ onNavigate }: HomeProps) {
                     {item.title === 'LuxAnima Mini Mascottes' && !item.comingSoon && (
                       <div className="mt-6">
                         <button
-                          onClick={() => onNavigate('lux-mini-mascottes')}
+                          onClick={() => navigate('/lux-mini-mascottes')}
                           className="w-full px-6 py-3 bg-gradient-to-r from-gray-800 to-black text-white font-bold rounded-full hover:from-gray-900 hover:to-gray-800 transition-all hover:scale-105 shadow-lg"
                         >
                           Découvrir ce pôle
@@ -208,7 +211,7 @@ export default function Home({ onNavigate }: HomeProps) {
                     {item.title === 'LuxAnima 3D Event Box' && !item.comingSoon && (
                       <div className="mt-6">
                         <button
-                          onClick={() => onNavigate('lux-event-box')}
+                          onClick={() => navigate('/lux-event-box')}
                           className="w-full px-6 py-3 bg-gradient-to-r from-gray-800 to-black text-white font-bold rounded-full hover:from-gray-900 hover:to-gray-800 transition-all hover:scale-105 shadow-lg"
                         >
                           Découvrir ce pôle
@@ -233,19 +236,19 @@ export default function Home({ onNavigate }: HomeProps) {
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center max-w-lg sm:max-w-none mx-auto">
             <button
-              onClick={() => onNavigate('booking')}
+              onClick={() => navigate('/contact-booking')}
               className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-full font-bold text-base sm:text-lg hover:from-gray-900 hover:to-gray-800 transition-all shadow-lg hover:scale-105"
             >
               Réserver maintenant
             </button>
             <button
-              onClick={() => onNavigate('booking')}
+              onClick={() => navigate('/contact-booking')}
               className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-900 rounded-full font-bold text-base sm:text-lg hover:bg-gray-50 hover:scale-105 transition-all border-2 border-gray-800 shadow-lg"
             >
               Demander un devis
             </button>
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => navigate('/contact')}
               className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-900 rounded-full font-bold text-base sm:text-lg hover:bg-gray-50 hover:scale-105 transition-all border-2 border-gray-800 shadow-lg"
             >
               Nous contacter

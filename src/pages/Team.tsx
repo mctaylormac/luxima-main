@@ -1,10 +1,6 @@
 import { Users, UtensilsCrossed, Truck } from 'lucide-react';
 
-interface TeamProps {
-  onNavigate: (page: string, data?: any) => void;
-}
-
-export default function Team({ onNavigate }: TeamProps) {
+export default function Team() {
   const poles = [
     {
       icon: Users,
@@ -106,12 +102,7 @@ export default function Team({ onNavigate }: TeamProps) {
                       ))}
                     </ul>
                   ) : null}
-                  <button
-                    onClick={() => onNavigate(pole.page)}
-                    className="w-full py-3 bg-gradient-to-r from-gray-800 to-black text-white rounded-full font-semibold hover:from-gray-900 hover:to-gray-800 transition-all hidden"
-                  >
-                    Découvrir
-                  </button>
+                  {/* Bouton caché dans la version actuelle - navigation gérée par les autres pages */}
                 </div>
               </div>
             ))}

@@ -9,13 +9,6 @@ export default function Contact() {
     message: ''
   });
 
-  // Netlify Forms will handle the submit — keep handler for local use if needed
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // If you need to submit via JS, implement fetch to Netlify endpoint here.
-    // Currently the form is configured to submit natively to Netlify Forms.
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -140,7 +133,7 @@ export default function Contact() {
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                action="/thank-you"
+                action="/thank-you/"
                 className="space-y-6"
               >
                 <input type="hidden" name="form-name" value="contact" />

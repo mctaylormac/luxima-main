@@ -1,23 +1,25 @@
-interface ServiceDetailProps {
-  onNavigate: (page: string) => void;
-  service: {
-    title: string;
-    description: string;
-    image: string;
-    presentationImage?: string;
-  } | null;
-}
-
 import { ArrowLeft } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function ServiceDetail({ onNavigate, service }: ServiceDetailProps) {
+type ServiceDetailState = {
+  title: string;
+  description: string;
+  image: string;
+  presentationImage?: string;
+} | null;
+
+export default function ServiceDetail() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const service = (location.state as ServiceDetailState) ?? null;
+
   if (!service) {
     return (
       <div className="min-h-screen pt-20 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Service non trouvé</h1>
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => navigate('/')}
             className="px-6 py-3 bg-gradient-to-r from-gray-800 to-black text-white rounded-full font-bold hover:from-gray-900 hover:to-gray-800 transition-all"
           >
             Retour à l'accueil
@@ -47,7 +49,7 @@ export default function ServiceDetail({ onNavigate, service }: ServiceDetailProp
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft size={20} />

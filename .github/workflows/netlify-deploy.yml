@@ -8,37 +8,29 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+    
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm' # Accélère les builds futurs en mettant les modules en cache
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build project
         run: npm run build
       
-      - name: Check Netlify secrets
-        run: |
-          if [ -z "${{ secrets.NETLIFY_AUTH_TOKEN }}" ] || [ -z "${{ secrets.NETLIFY_SITE_ID }}" ]; then
-            echo "NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is missing. Deploy step will be skipped.";
-          else
-            echo "Netlify secrets present";
-          fi
-
-      - name: Deploy to Netlify (optional)
-        if: ${{ secrets.NETLIFY_AUTH_TOKEN && secrets.NETLIFY_SITE_ID }}
+      - name: Deploy to Netlify
+        # Cette condition vérifie que les secrets existent avant de lancer l'action
+        if: secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != ''
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --prod --dir=dist
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          npx netlify --version || npm i -g netlify-cli
-          npx netlify deploy --prod --dir=dist --site=$NETLIFY_SITE_ID
