@@ -35,7 +35,6 @@ jobs:
         run: npm run build
       
       - name: Deploy to Netlify
-        if: ${{ secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != '' }}
         uses: netlify/actions/cli@v1.2.4
         with:
           args: deploy --prod --dir=dist
