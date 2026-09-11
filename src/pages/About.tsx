@@ -14,14 +14,20 @@ export default function About() {
             backgroundRepeat: 'no-repeat',
             filter: 'blur(5px)'
           }}
-        >
-        </div>
+        />
+        <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center w-full">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1
+            className="text-5xl md:text-6xl font-bold mb-6"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.7)' }}
+          >
             À propos de nous
           </h1>
-          <p className="text-xl md:text-2xl text-white/90">
+          <p
+            className="text-xl md:text-2xl text-white/95"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
+          >
             Découvrez notre histoire, nos valeurs et notre vision
           </p>
         </div>

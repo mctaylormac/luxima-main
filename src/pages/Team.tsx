@@ -15,7 +15,7 @@ export default function Team() {
       icon: UtensilsCrossed,
       title: 'Gourmand Événementiel & Vente Mobile',
       description: 'Des stands gourmands premium alliant esthétique, générosité et saveurs.',
-      items: ['Gaufres de liége artisanales (spéculoos, Nutella, toppings variés)', 'Crêpes gourmandes (classiques et personnalisables)', 'Beignets & douceurs sucrées', 'Popcorn & Barbe à papa', 'Glaces & bâtons glacés (parfaits pour événements estivaux)'],
+      items: ['Gaufres belges artisanales (spéculoos, Nutella, toppings variés)', 'Crêpes gourmandes (classiques et personnalisables)', 'Beignets & douceurs sucrées', 'Popcorn & Barbe à papa', 'Glaces & bâtons glacés (parfaits pour événements estivaux)'],
       color: 'from-amber-500 to-orange-600',
       image: 'Luxanima groupe gourmand.jpeg',
       page: 'univers'
@@ -33,7 +33,7 @@ export default function Team() {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Section Hero - CORRECTION : <div> fermant incorrectement */}
+      {/* Section Hero */}
       <section className="relative min-h-[60vh] flex items-center text-white overflow-hidden">
         <div
           className="absolute inset-0"
@@ -45,12 +45,14 @@ export default function Team() {
             backgroundRepeat: "no-repeat",
             filter: 'blur(5px)'
           }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+        />
+        <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1
+            className="text-5xl md:text-6xl font-bold mb-6"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.7)' }}
+          >
             Nos Services
           </h1>
         </div>
@@ -61,7 +63,7 @@ export default function Team() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Nos 3 Pôles d'Excellence
+              Nos services d'Excellence
             </h2>
             <p className="text-xl text-gray-600">
               Des services premium pour sublimer vos événements

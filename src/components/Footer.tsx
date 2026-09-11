@@ -12,7 +12,7 @@ export default function Footer() {
               className="h-20 w-auto mb-4"
             />
             <p className="text-gray-300 text-sm leading-relaxed">
-              Agence artistique & événement premium.
+              Agence événementielle & Artistique
             </p>
           </div>
 

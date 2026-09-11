@@ -16,106 +16,110 @@ export default function Contact() {
     });
   };
 
+  const contactItems = [
+    {
+      icon: Phone,
+      label: 'Téléphone',
+      value: '+32 493 92 XX XX',
+      sub: 'Lundi - Vendredi : 9h - 18h',
+    },
+    {
+      icon: Mail,
+      label: 'Email',
+      value: 'luxanimagroup@gmail.com',
+      sub: 'Réponse sous 24h',
+    },
+    {
+      icon: MapPin,
+      label: 'Belgique',
+      value: 'Intervention nationale',
+      sub: '',
+    },
+    {
+      icon: MessageCircle,
+      label: 'WhatsApp',
+      value: 'Discussion instantanée',
+      sub: 'Bouton flottant en bas à droite',
+    },
+  ];
+
   return (
     <div className="min-h-screen pt-20">
-      <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-purple-900 via-purple-700 to-pink-600 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-300 rounded-full blur-3xl"></div>
-        </div>
 
+      {/* ── HERO ── */}
+      <section className="relative min-h-[60vh] flex items-center text-white overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/chatgpt_image_6_dec._2025,_14_56_51.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'blur(5px)',
+          }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Contactez-nous
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Contactez-nous</h1>
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
             Nous sommes à votre écoute pour répondre à toutes vos questions
           </p>
         </div>
       </section>
 
+      {/* ── COORDONNÉES + FORMULAIRE ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            {/* Colonne gauche — coordonnées & réseaux */}
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-8">
                 Parlons de votre projet
               </h2>
 
-              <div className="space-y-6 mb-12">
-                <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone size={24} className="text-white" />
+              <div className="space-y-4 mb-12">
+                {contactItems.map(({ icon: Icon, label, value, sub }) => (
+                  <div
+                    key={label}
+                    className="flex items-start gap-4 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-gray-200"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">{label}</h3>
+                      <p className="text-gray-600">{value}</p>
+                      {sub && <p className="text-sm text-gray-500 mt-1">{sub}</p>}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Téléphone</h3>
-                    <p className="text-gray-600">+32 493 92 XX XX</p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Lundi - Vendredi: 9h - 18h
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">luxanimagroup@gmail.com</p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Réponse sous 24h
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Adresse</h3>
-                    <p className="text-gray-600">Belgique</p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Intervention nationale
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MessageCircle size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">WhatsApp</h3>
-                    <p className="text-gray-600">Discussion instantanée</p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Cliquez sur le bouton flottant
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
+              {/* Réseaux sociaux */}
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Suivez-nous
-                </h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Suivez-nous</h3>
                 <div className="flex gap-4">
                   <a
                     href="#"
-                    className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                    aria-label="Facebook LuxAnima"
+                    className="w-14 h-14 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
                   >
                     <Facebook size={28} className="text-white" />
                   </a>
                   <a
-                    href="#"
-                    className="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                    href="https://www.instagram.com/m.y_creation_design?igsh=b2l3c3J6ZTl0a2pz&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram LuxAnima"
+                    className="w-14 h-14 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
                   >
                     <Instagram size={28} className="text-white" />
                   </a>
                   <a
                     href="#"
-                    className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                    aria-label="LinkedIn LuxAnima"
+                    className="w-14 h-14 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
                   >
                     <Linkedin size={28} className="text-white" />
                   </a>
@@ -123,10 +127,14 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-purple-50 rounded-3xl p-8 md:p-10 shadow-xl">
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                Envoyez-nous un message
-              </h3>
+            {/* Colonne droite — formulaire */}
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+              <div className="bg-gradient-to-r from-gray-800 to-black p-8 text-white">
+                <h3 className="text-3xl font-bold mb-2">Envoyez-nous un message</h3>
+                <p className="text-white/90">
+                  Remplissez ce formulaire et nous vous répondrons sous 24h
+                </p>
+              </div>
 
               <form
                 name="contact"
@@ -134,77 +142,83 @@ export default function Contact() {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 action="/thank-you/"
-                className="space-y-6"
+                className="p-8 md:p-10 space-y-6"
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
                   <label>
-                    Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                    Ne pas remplir :{' '}
+                    <input name="bot-field" onChange={handleChange} />
                   </label>
                 </p>
+
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
+                  <label htmlFor="contact-name" className="block text-gray-700 font-semibold mb-2">
                     Nom *
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-black focus:outline-none transition-colors bg-white"
                     placeholder="Votre nom"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
+                  <label htmlFor="contact-email" className="block text-gray-700 font-semibold mb-2">
                     Email *
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-black focus:outline-none transition-colors bg-white"
                     placeholder="votre@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
+                  <label htmlFor="contact-subject" className="block text-gray-700 font-semibold mb-2">
                     Sujet *
                   </label>
                   <input
+                    id="contact-subject"
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-black focus:outline-none transition-colors bg-white"
                     placeholder="Sujet de votre message"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
+                  <label htmlFor="contact-message" className="block text-gray-700 font-semibold mb-2">
                     Message *
                   </label>
                   <textarea
+                    id="contact-message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors resize-none bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-black focus:outline-none transition-colors resize-none bg-white"
                     placeholder="Votre message..."
-                  ></textarea>
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-xl font-bold text-lg hover:from-gray-900 hover:to-gray-800 transition-all shadow-lg hover:scale-105 flex items-center justify-center gap-2"
                 >
                   <Send size={24} />
                   Envoyer le message
@@ -215,9 +229,10 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+      {/* ── CTA WHATSAPP ── */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-12 shadow-xl text-center">
+          <div className="bg-white rounded-3xl p-12 shadow-xl text-center border border-gray-100">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Besoin d'une réponse rapide ?
             </h2>
@@ -225,13 +240,14 @@ export default function Contact() {
               Notre équipe est disponible sur WhatsApp pour répondre à toutes vos questions
               en temps réel. Cliquez sur le bouton flottant en bas à droite de votre écran.
             </p>
-            <div className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white rounded-full font-bold text-lg">
+            <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-full font-bold text-lg shadow-lg">
               <MessageCircle size={28} />
               Contactez-nous sur WhatsApp
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

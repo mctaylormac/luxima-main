@@ -5,6 +5,15 @@
 [context.production.environment]
   NODE_ENV = "production"
 
+# En-têtes de sécurité HTTP
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
 # Ensure Netlify sees the /thank-you static page and redirects
 [[redirects]]
   from = "/thank-you"

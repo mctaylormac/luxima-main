@@ -64,8 +64,9 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Image de fond floutée */}
         <div
-          className="absolute inset-0 bg-black"
+          className="absolute inset-0"
           style={{
             backgroundImage: "url('/chatgpt_image_6_dec._2025,_14_56_51.png')",
             backgroundSize: 'cover',
@@ -73,18 +74,26 @@ export default function Home() {
             backgroundRepeat: 'no-repeat',
             filter: 'blur(5px)'
           }}
-        >
-        </div>
+        />
+        {/* Overlay sombre pour lisibilité du texte */}
+        <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+          <h1
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.7)' }}
+          >
             LuxAnima Groupe
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-12 leading-relaxed">
+          <p
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-8 sm:mb-12 leading-relaxed"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
+          >
             Mascottes - Animations - Spectacles - Gourmandises - 3D Event Box - Evenement Premium
           </p>
         </div>
       </section>
+
 
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

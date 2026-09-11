@@ -43,9 +43,8 @@ export default function ServiceDetail() {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+        />
+        <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <button
@@ -56,7 +55,10 @@ export default function ServiceDetail() {
             <span>Retour</span>
           </button>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1
+            className="text-4xl md:text-6xl font-bold mb-6"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.7)' }}
+          >
             {service.title}
           </h1>
         </div>
@@ -86,13 +88,13 @@ export default function ServiceDetail() {
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => onNavigate('booking')}
+              onClick={() => navigate('/contact-booking')}
               className="px-8 py-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-full font-bold text-lg hover:from-gray-900 hover:to-gray-800 transition-all shadow-lg hover:scale-105"
             >
               Réserver ce service
             </button>
             <button
-              onClick={() => onNavigate('home')}
+              onClick={() => navigate('/')}
               className="px-8 py-4 bg-white text-gray-900 rounded-full font-bold text-lg hover:bg-gray-50 transition-all border-2 border-gray-800 shadow-lg hover:scale-105"
             >
               Retour à l'accueil

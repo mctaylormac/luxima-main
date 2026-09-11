@@ -25,28 +25,29 @@ export default function Booking() {
   return (
     <div className="min-h-screen pt-20">
       <section className="relative py-20 text-white overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: "url('/chatgpt_image_6_dec._2025,_14_56_51.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            filter: 'blur(20px)'
+            filter: 'blur(5px)'
           }}
-        ></div>
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-300 rounded-full blur-3xl"></div>
-        </div>
+        />
+        <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Réservation & Devis
+          <h1
+            className="text-5xl md:text-6xl font-bold mb-6"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.7)' }}
+          >
+            Réservation &amp; Devis
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+          <p
+            className="text-xl md:text-2xl text-white/95 leading-relaxed"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
+          >
             Concrétisons ensemble votre événement de rêve
           </p>
         </div>
@@ -123,7 +124,7 @@ export default function Booking() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
-                  placeholder="+33 X XX XX XX XX"
+                  placeholder="+32 X XX XX XX XX"
                 />
               </div>
 

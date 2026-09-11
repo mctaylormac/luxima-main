@@ -71,9 +71,8 @@ export default function LuxEventBox() {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+        />
+        <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <button
@@ -84,11 +83,17 @@ export default function LuxEventBox() {
             <span>Retour</span>
           </button>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1
+            className="text-4xl md:text-6xl font-bold mb-4"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.7)' }}
+          >
             LuxAnima 3D Event Box
           </h1>
-          <p className="text-lg md:text-xl text-white/90">
-            Décors immersifs et photobox premium pour des événements d'exception
+          <p
+            className="text-lg md:text-xl text-white/95"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
+          >
+            Décors immersifs et photobox premium pour des événements d’exception
           </p>
         </div>
       </section>
