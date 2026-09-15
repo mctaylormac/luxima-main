@@ -358,10 +358,16 @@ export default function ContactBooking() {
               </p>
 
               <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white rounded-full font-bold text-lg">
+                <a
+                  href="https://wa.me/243813663242"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contactez-nous sur WhatsApp"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-bold text-lg transition-all hover:scale-105 shadow-lg cursor-pointer"
+                >
                   <MessageCircle size={28} />
                   Contactez-nous sur WhatsApp
-                </div>
+                </a>
               </div>
 
               <div className="text-center">
