@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -101,14 +101,16 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Suivez-nous</h3>
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/share/19Mj6N61Nq/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Facebook LuxAnima"
                     className="w-14 h-14 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
                   >
                     <Facebook size={28} className="text-white" />
                   </a>
                   <a
-                    href="https://www.instagram.com/m.y_creation_design?igsh=b2l3c3J6ZTl0a2pz&utm_source=qr"
+                    href="https://www.instagram.com/luxanima_groupe?stkn=d2xtMXExdGt4eXNp&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram LuxAnima"
@@ -117,11 +119,19 @@ export default function Contact() {
                     <Instagram size={28} className="text-white" />
                   </a>
                   <a
-                    href="#"
-                    aria-label="LinkedIn LuxAnima"
-                    className="w-14 h-14 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok LuxAnima"
+                    className="w-14 h-14 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg text-white"
                   >
-                    <Linkedin size={28} className="text-white" />
+                    <svg
+                      className="w-7 h-7 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+                    </svg>
                   </a>
                 </div>
               </div>
